@@ -7,6 +7,47 @@ main { display: flex; gap: 20px; }
 #subjects-pool { width: 200px; background: #fff; padding: 10px; border-radius: 8px; min-height: 400px; }
 .card { background: #3498db; color: white; padding: 10px; margin: 5px 0; border-radius: 4px; cursor: grab; }
 
-#categories-grid { display: flex; gap: 15px; flex-wrap: wrap; }
-.category-zone { background: #ddd; border: 2px dashed #999; width: 200px; min-height: 200px; padding: 10px; border-radius: 8px; }
-.drop-area { min-height: 150px; }
+/* This makes the category zones (Buy, Borrow, etc.) appear in a 2-column grid */
+#categories-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; 
+    flex-grow: 1;
+}
+
+.category-zone { 
+    background: #e0e0e0; 
+    border: 2px dashed #bbb; 
+    padding: 15px; 
+    border-radius: 12px; 
+    min-height: 250px; 
+}
+
+.category-zone h4 {
+    margin-top: 0;
+    text-transform: capitalize;
+    color: #444;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* This makes the CARDS inside the category stack in 2 columns */
+.drop-area { 
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for cards */
+    gap: 10px;
+    min-height: 200px; 
+    align-content: start; /* Keeps cards at the top */
+}
+
+/* Ensure cards look good in the smaller 2-column slots */
+.card { 
+    background: #3498db; 
+    color: white; 
+    padding: 12px 8px; 
+    border-radius: 6px; 
+    cursor: grab; 
+    text-align: center;
+    font-size: 0.9em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
