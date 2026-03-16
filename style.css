@@ -2,10 +2,22 @@ body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
 #tabs-container { margin-bottom: 20px; }
 button { padding: 10px 20px; margin-right: 5px; cursor: pointer; }
 
-main { display: flex; gap: 20px; }
+main { 
+    display: flex; 
+    align-items: flex-start;
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-#subjects-pool { width: 200px; background: #fff; padding: 10px; border-radius: 8px; min-height: 400px; }
-.card { background: #3498db; color: white; padding: 10px; margin: 5px 0; border-radius: 4px; cursor: grab; }
+#subjects-pool { 
+    width: 250px; /* Slightly wider for better visibility */
+    flex-shrink: 0; /* Prevents the pool from getting squeezed */
+    background: #fff; 
+    padding: 15px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
 
 /* This makes the category zones (Buy, Borrow, etc.) appear in a 2-column grid */
 #categories-grid { 
